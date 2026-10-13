@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-teal: #19B5A5;
+  --color-teal-dark: #138E82;
+  --color-yellow: #FFD23F;
+  --color-navy: #1F2A44;
+  --color-mint: #E6FAF5;
+  --color-surface: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-mint);
+    color: var(--color-navy);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--color-navy);
+    letter-spacing: -0.02em;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Smooth scroll offset for sticky navbar */
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 20px -2px rgba(31, 42, 68, 0.06), 0 2px 6px -1px rgba(31, 42, 68, 0.04);
+  }
+
+  .card-hover {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -4px rgba(31, 42, 68, 0.1), 0 4px 12px -2px rgba(31, 42, 68, 0.05);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
