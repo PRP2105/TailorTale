@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
 import { QuizSection } from './QuizSection';
 import { CommunitiesSection } from './CommunitiesSection';
 import { PricingSection } from './PricingSection';
